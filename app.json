@@ -1,0 +1,121 @@
+{
+  import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+
+      {/* Titre */}
+      <Text style={styles.title}>Bienvenue sur ScanShop</Text>
+      <Text style={styles.subtitle}>
+        Connectez-vous pour accéder à tous vos services.
+      </Text>
+
+      {/* Email */}
+      <View style={styles.inputContainer}>
+        <Ionicons name="mail-outline" size={20} color="#999" />
+        <TextInput
+          placeholder="Adresse e-mail"
+          keyboardType="email-address"
+          style={styles.input}
+        />
+      </View>
+
+      {/* Mot de passe */}
+      <View style={styles.inputContainer}>
+        <Ionicons name="lock-closed-outline" size={20} color="#999" />
+        <TextInput
+          placeholder="Mot de passe"
+          secureTextEntry
+          style={styles.input}
+        />
+        <Ionicons name="eye-off-outline" size={20} color="#999" />
+      </View>
+
+      {/* Mot de passe oublié */}
+      <Text style={styles.forgot}>Mot de passe oublié ?</Text>
+
+      {/* Bouton connexion */}
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Se connecter</Text>
+      </TouchableOpacity>
+
+      {/* Inscription */}
+      <Text style={styles.register}>
+        Pas de compte ? <Text style={styles.link}>S’inscrire</Text>
+      </Text>
+
+      {/* Réseaux sociaux */}
+      <View style={styles.socials}>
+        <FontAwesome name="instagram" size={28} color="#C13584" />
+        <FontAwesome name="facebook" size={28} color="#4267B2" />
+        <FontAwesome name="google" size={28} color="#DB4437" />
+      </View>
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 25,
+    justifyContent: 'center',
+    backgroundColor: '#fff',
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: '#1E4E8C',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  subtitle: {
+    textAlign: 'center',
+    color: '#777',
+    marginBottom: 30,
+  },
+  inputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F2F2F2',
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 15,
+  },
+  input: {
+    flex: 1,
+    marginLeft: 10,
+  },
+  forgot: {
+    color: '#1E4E8C',
+    textAlign: 'right',
+    marginBottom: 20,
+  },
+  button: {
+    backgroundColor: '#3A5F8A',
+    padding: 15,
+    borderRadius: 30,
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  register: {
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  link: {
+    color: '#1E4E8C',
+    fontWeight: 'bold',
+  },
+  socials: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 10,
+  },
+});
+}
